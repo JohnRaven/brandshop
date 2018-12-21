@@ -19,7 +19,21 @@
 		</div>
 	</header>
 	<div id="content">
-		<div id="promo">
+		<?php                        /*Если не подключается - очистить кэш*/
+			$myVariable = "hello world";   /*переменная*/
+			$myVariable1 = 432;
+			echo $myVariable;
+			var_dump($myVariable);
+			var_dump($myVariable1);
+			$a = 2;
+			$b = 5;
+			$c = $a + $b;
+			var_dump($c);
+
+			$password = " ";
+			var_dump($password == " ");
+		?>
+		<!-- <div id="promo">
 			<h1 id="promoText">
 				Здесь будет рекламный заголовок
 			</h1>
@@ -119,7 +133,7 @@
 					</div> 
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 

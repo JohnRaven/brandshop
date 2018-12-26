@@ -20,53 +20,43 @@
 	</header>
 	<div id="content">
 		<?php                        /*Если не подключается - очистить кэш*/
-			/*$myVariable = "hello world";*/   /*переменная*/
-			/*$myVariable1 = 432;
-			echo $myVariable;
-			var_dump($myVariable);
-			var_dump($myVariable1);
-			$a = 2; $b = 5; $c = $a + $b;
-			var_dump($c);
-
-			$password = " ";
-			var_dump($password == " ");*/
-			$id = 1;
-			$name = "Iphone";
-			$desc = "Здесь будет описание для телефона Iphone";
-			$img = "/images/goods/iphone.jpg";
-			$price = "2000 $";
-
-			echo $id . "<br>";   /*конкатенация - объединение нескольких строчек в одну*/
-			echo $name . "<br>";
-			echo $desc . "<br>";
-			echo $img . "<br>";
-			echo $price ."<br>"."<br>";
-
-				/*МАССИВы:*/
-			$product = [];
-			var_dump($product); 
-						/*Индексированные:*/
-				$product = [1, 'Iphone','Здесь будет описание для телефона Iphone', '/images/goods/iphone.jpg', '2000 $'];
-				var_dump($product);
-				echo $product[3];
-				$product[] = 'Сегодня скидка 20%';
-				$product[8] = 28;
-				$product[] = 326;
-				var_dump($product);
-						/*Ассоциативные:*/
-				$product = [
-					'id' => 1,
+			$goods = [
+				[	'id' => 1,
 					'name' => 'Iphone',
-					'desc' => 'Здесь будет описание для телефона Iphone',
-					'img' => '/images/goods/iphone.jpg',
-					'price' => '2000 $'
-				];
-				echo $product['name']."<br>";
-				echo $product['desc']."<br>";
-				$product['count'] = 162;
-				var_dump($product);
+					'desc' => 'Описание для Iphone',
+					'img' => 'images/goods/iphone.jpg',
+					'price' => '2000 $'],
 				
+				[	'id' => 2,
+					'name' => 'HTC',
+					'desc' => 'Описание для HTC',
+					'img' => 'images/goods/htc.jpg',
+					'price' => '1200 $'],
 
+				[	'id' => 3,
+					'name' => 'Samsung',
+					'desc' => 'Описание для Samsung',
+					'img' => 'images/goods/samsung.jpg',
+					'price' => '1400 $'],	
+			];
+			echo '<pre>';		/*Выводит на экран как записано*/
+			var_dump($goods);
+			echo $goods[1]['name'].'<br>';	/*Выводит конкретное значение конкретного элемента массива*/
+			echo $goods[2]['desc'].'<br>';
+			echo $goods[0]['price'].'<br>';
+
+			$goods[] = [
+				'id' => 4,
+				'name' => 'Explay',
+				'desc' => 'Описание для Explay',
+				'img' => 'images/goods/explay.jpg',
+				'price' => '800 $',
+				'discount' => 20,
+				'count' => 34
+			];
+			$goods[2]['discount'] = 20;  /*Добавление в конкретный массив 2 значение discount 20 */
+			echo '<pre>';		
+			var_dump($goods);
 		?>
 		<!-- <div id="promo">
 			<h1 id="promoText">

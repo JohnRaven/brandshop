@@ -20,6 +20,9 @@
 	</header>
 	<div id="content">
 		<?php                        /*Если не подключается - очистить кэш*/
+
+						
+
 			$goods = [
 				[	'id' => 1,
 					'name' => 'Iphone',
@@ -39,24 +42,20 @@
 					'img' => 'images/goods/samsung.jpg',
 					'price' => '1400 $'],	
 			];
-			echo '<pre>';		/*Выводит на экран как записано*/
-			var_dump($goods);
-			echo $goods[1]['name'].'<br>';	/*Выводит конкретное значение конкретного элемента массива*/
-			echo $goods[2]['desc'].'<br>';
-			echo $goods[0]['price'].'<br>';
+			/*ЦИКЛЫ: {foreach}*/
+			foreach ($goods as $key => $good) {     /*новая переменная, которая принадлежит массиву good*/
+				echo 'Ключ массива: '.$key.'<br>';	/*Выводит надпись -> номер массива -> перенос на другую строку*/
+				echo $good['id'].'<br>';
+				echo $good['name'].'<br>';
+				echo $good['desc'].'<br>';
+				echo $good['img'].'<br>';
+				echo $good['price'].'<br>';
+				echo '<hr>';
+			}
 
-			$goods[] = [
-				'id' => 4,
-				'name' => 'Explay',
-				'desc' => 'Описание для Explay',
-				'img' => 'images/goods/explay.jpg',
-				'price' => '800 $',
-				'discount' => 20,
-				'count' => 34
-			];
-			$goods[2]['discount'] = 20;  /*Добавление в конкретный массив 2 значение discount 20 */
-			echo '<pre>';		
-			var_dump($goods);
+			
+
+
 		?>
 		<!-- <div id="promo">
 			<h1 id="promoText">

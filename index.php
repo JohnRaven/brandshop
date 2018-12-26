@@ -20,18 +20,53 @@
 	</header>
 	<div id="content">
 		<?php                        /*Если не подключается - очистить кэш*/
-			$myVariable = "hello world";   /*переменная*/
-			$myVariable1 = 432;
+			/*$myVariable = "hello world";*/   /*переменная*/
+			/*$myVariable1 = 432;
 			echo $myVariable;
 			var_dump($myVariable);
 			var_dump($myVariable1);
-			$a = 2;
-			$b = 5;
-			$c = $a + $b;
+			$a = 2; $b = 5; $c = $a + $b;
 			var_dump($c);
 
 			$password = " ";
-			var_dump($password == " ");
+			var_dump($password == " ");*/
+			$id = 1;
+			$name = "Iphone";
+			$desc = "Здесь будет описание для телефона Iphone";
+			$img = "/images/goods/iphone.jpg";
+			$price = "2000 $";
+
+			echo $id . "<br>";   /*конкатенация - объединение нескольких строчек в одну*/
+			echo $name . "<br>";
+			echo $desc . "<br>";
+			echo $img . "<br>";
+			echo $price ."<br>"."<br>";
+
+				/*МАССИВы:*/
+			$product = [];
+			var_dump($product); 
+						/*Индексированные:*/
+				$product = [1, 'Iphone','Здесь будет описание для телефона Iphone', '/images/goods/iphone.jpg', '2000 $'];
+				var_dump($product);
+				echo $product[3];
+				$product[] = 'Сегодня скидка 20%';
+				$product[8] = 28;
+				$product[] = 326;
+				var_dump($product);
+						/*Ассоциативные:*/
+				$product = [
+					'id' => 1,
+					'name' => 'Iphone',
+					'desc' => 'Здесь будет описание для телефона Iphone',
+					'img' => '/images/goods/iphone.jpg',
+					'price' => '2000 $'
+				];
+				echo $product['name']."<br>";
+				echo $product['desc']."<br>";
+				$product['count'] = 162;
+				var_dump($product);
+				
+
 		?>
 		<!-- <div id="promo">
 			<h1 id="promoText">
